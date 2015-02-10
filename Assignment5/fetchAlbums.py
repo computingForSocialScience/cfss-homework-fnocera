@@ -9,24 +9,24 @@ def fetchAlbumIds(artist_id):
 	url = url_base + artist_id_str + '/albums?market=US&album_type=album'
 	#print url
 	req = requests.get(url)
-	if not req.ok:
+	if req.ok == False:
 		print 'Error'
 	req_json = req.json()
 	get_items = req_json.get('items')
-	mylist = []
+	album_list = []
 	for i in range(len(get_items)):
 		get_line = get_items[i]
 		get_id = get_line['id']
-		mylist.append(get_id)
-
-	return mylist
+		album_list.append(get_id)
+	return album_list
 	
 
 def fetchAlbumInfo(album_id):
 	url = 'https://api.spotify.com/v1/albums/' + album_id
+	#print url
 	req = requests.get(url)
-	if not req.ok:
-		print 'Error'
+	if req.ok == False:
+		print 'Error lalal'
 	req_json = req.json()
 	get_artists = req_json.get('artists')
 	artist_id = get_artists[0]['id']
@@ -40,7 +40,7 @@ def fetchAlbumInfo(album_id):
 	album_dict = dict(zip(keys,values))
 	return album_dict
 
-album_id = '6hU9JCoqq4GjYq86dQ1o9b'
-print(fetchAlbumInfo(album_id))
+#album_id = '6hU9JCoqq4GjYq86dQ1o9b'
+#print(fetchAlbumInfo(album_id))
 
 
