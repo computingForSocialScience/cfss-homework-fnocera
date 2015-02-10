@@ -1,7 +1,6 @@
 import sys
 import requests
 import csv
-#from bs4 import Beautiful Soup
 
 def fetchArtistId(name):
     """Using the Spotify API search method, take a string that is the artist's name, 
@@ -31,8 +30,6 @@ def fetchArtistInfo(artist_id):
     'id', 'name', and 'popularity'.
     """
     base_url = 'https://api.spotify.com/v1/artists/'
-    artist_id = fetchArtistId(artist)
-    #print artist_id
     url = base_url + str(artist_id)
     #print url
     req = requests.get(url)
@@ -50,6 +47,6 @@ def fetchArtistInfo(artist_id):
     artist_dict = dict(zip(keys,values))
     return artist_dict
 
-artist = 'Nirvana'
-artist_id = fetchArtistId(artist)
-print(fetchArtistInfo(artist_id))
+#artist = 'Nirvana'
+#artist_id = fetchArtistId(artist)
+#print(fetchArtistInfo(artist_id))
