@@ -25,7 +25,7 @@ def getRelatedArtists(artistID):
 	
 
 def getDepthEdges(artistID, depth):
-	true_depth = depth
+	tupl_artist_list_primary = []
 	tupl_artist_list = []
 	related_ids = []
 	related_ids.append(artistID)
@@ -34,10 +34,12 @@ def getDepthEdges(artistID, depth):
 			depth_artist_list = getRelatedArtists(ids)
 			for artist in depth_artist_list:
 				tupl = (ids, artist)
-				tupl_artist_list.append(tupl)
+				tupl_artist_list_primary.append(tupl)
 		related_ids = depth_artist_list
-	return tupl_artist_list
-	
+	for tupl in tupl_artist_list_primary:
+		if tupl not in tupl_artist_list:
+			tupl_artist_list.append(tupl)
+	return tupl_artist_list 	# Check that tuples not duplicated
 
 def getEdgeList(artistID, depth):
 	tuple_list = getDepthEdges(artistID, depth)
@@ -46,10 +48,10 @@ def getEdgeList(artistID, depth):
 
 def writeEdgeList(artistID, depth, filename):
 	save_edgelist = getEdgeList(artistID, depth)
-	saved_csv_file = save_edgelist.to_csv(filename, index = False)
+	saved_csv_file = save_edgelist.to_csv(filename, index = False, header = ['artist', 'related_artist'])
 
 # need to comment this out! 
-artist = '2mAFHYBasVVtMekMUkRO9g'
-depth = 2
-filename = 'artist_list.csv'
-writeEdgeList(artist,depth,filename)
+#artist = '2mAFHYBasVVtMekMUkRO9g'
+#depth = 2
+#filename = 'artist_list.csv'
+#writeEdgeList(artist,depth,filename)
