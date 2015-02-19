@@ -1,0 +1,11 @@
+
+CFSS Project Proposal: The Structure of Patent Networks - Federica Nocera
+
+1) a description of the project (WHAT?)
+For this project I will be analyzing data on US patents. This will form the first part of a larger project which I will be undertaking as my MA Thesis. I hope to graph both a citation network between patents and begin to construct a hypergraph consisting of different elements contained within patents as the different nodes (class, company, inventor, location). I am still not sure what I will do to make the project interactive but I was thinking of the network/hypergraph at different points in time dependent on a time input. 
+
+2) a justification for how it helps you solve a substantial research problem (WHY?)
+Through this class project I will take the first steps towards developing a dynamic hypergraph, across a number of features. Through the detailed study of the structure of the network, I later hope to understand the dynamics that combine various elements which make up new patents. This will allow for the development of a predictive model, to estimate the likelihood of link formation between the different “element” nodes (class, company, inventor, location). In this way, the project will contribute to the understanding of the process by which inventions emerge from the status quo, and be able to suggest promising directions for future development/research.
+
+3) your outline for the computational steps involved (HOW?)
+Using mySQL and Python scripts I will clean and extract the patent data required (from a mySQL database), creating dictionaries, matrices etc. I will then graph the network and hypergraph. I am still not sure how to include a level of interactivity or how to access/make the data accessible from a web interface - hopefully we will learn this next week!
