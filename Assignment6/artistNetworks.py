@@ -39,7 +39,7 @@ def getDepthEdges(artistID, depth):
 	for tupl in tupl_artist_list_primary:
 		if tupl not in tupl_artist_list:
 			tupl_artist_list.append(tupl)
-	return tupl_artist_list 	# Check that tuples not duplicated
+	return tupl_artist_list
 
 def getEdgeList(artistID, depth):
 	tuple_list = getDepthEdges(artistID, depth)
