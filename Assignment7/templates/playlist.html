@@ -1,0 +1,23 @@
+<html>
+<head>
+	<h1>Songs in Playlist</h1>
+</head>
+<body>
+	<table>
+	<tr>
+	<th>Number</th>
+	<th>Artist Name</th>
+	<th>Album Name</th>
+	<th>Track Name</th>
+	</tr>
+	{% for songorder, artistname, albumname, trackname in songs %}
+	<tr>
+	<td>{{songorder}}</td>
+	<td>{{artistname}}</td>
+	<td>{{albumname}}</td>
+	<td>{{trackname}}</td>
+	</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>
