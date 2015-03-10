@@ -31,9 +31,17 @@ def createNewPlaylist(input_name):
     edge_list = getEdgeList(artists_id,depth)
     G = pandasToNetworkX(edge_list)
     random_artists = []
-    for i in range(30):
+    
+    limit = 30
+    while limit > 0:
         random_artist = randomCentralNode(G)
-        random_artists.append(random_artist)
+        album_id_list = fetchAlbumIds(random_artist)
+        if album_id_list == []:
+            pass
+        else:
+            random_artists.append(random_artist)
+            limit = limit -1
+
     artist_names = []
     album_list = []
     for artist_id in random_artists:
