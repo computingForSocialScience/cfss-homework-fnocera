@@ -1,0 +1,30 @@
+<html>
+    <body>
+    <h1>{{companyName}}</h1>
+    <table>
+    <tr>
+    <th>Number of Patents</th></tr>
+    <tr><td>Total Patents = {{number_of_patents}}</td>
+    </tr>
+    </table>
+    <table>
+    <tr>
+    <th><h3>Top 10 Classes</h3></th></tr>
+    <th>Class Number</th><th>Class Name</th><th>Number of Patents</th><th>Betweenness</th><th>Eigenvector Centrality</th>
+    {% for class, name, no_of_patents, bet, eigen in classes_names %}
+    <tr>
+    <td>{{class}}</td>
+    <td>{{name}}</td>
+    <td>{{no_of_patents}}</td>
+    <td>{{bet}}</td>
+    <td>{{eigen}}</td>
+    </tr>
+   {% endfor %}
+    </table>
+
+ <li><h3><a href ="/network/{{companyName}}">{{companyName}} Technology Class Network</a></h3>
+
+<img src="{{ url_for('static', filename=png_file ) }}">
+
+</body>
+</html>
