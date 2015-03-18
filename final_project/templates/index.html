@@ -1,0 +1,14 @@
+<html>
+<head><title>Patent Networks</title></head>
+<body>
+
+        <h1>Company Patent Networks</h1>
+        <h3>Choose a company</h3>
+        <ul>
+           {% for comp in company_input %}
+ 			<li><h3><a href ="/company_info/{{comp}}">{{comp}}</a></h3>
+ 		{% endfor %}
+        </ul>
+
+</body>
+</html>
